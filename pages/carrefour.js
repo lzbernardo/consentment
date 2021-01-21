@@ -24,9 +24,9 @@ export default function Carrefour() {
 
   return (
     <>
-      <Header mode={mode}>
-      </Header>
       <Container mode={mode}>
+        <Header mode={mode}>
+        </Header>
         {
           { 'lead': <Lead mode={mode} handler={leadHandler} />,
             'forms': <Forms mode={mode} source={source} handler={formsHandler} />,

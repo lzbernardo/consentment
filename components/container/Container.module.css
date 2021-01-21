@@ -1,6 +1,10 @@
 .container {
   width: 100%;
   background-size: cover;
-  height: calc(100vh - 120px);
-  background-repeat: repeat;
+  min-height: 100vh;
+  padding: 0 0 3em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: repeat-y;
 }
