@@ -3,6 +3,8 @@ import Switch from 'react-input-switch';
 import { useFormikContext, Formik, Field, Form, ErrorMessage } from 'formik';
 import SheetDB from 'sheetdb-js'
 import styles from './Forms.module.css';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 function Forms(props){
   const { handler, mode, source } = props;
@@ -64,7 +66,7 @@ function Forms(props){
           console.log(values);
           setSubmitting(true);
           setTimeout(() => {
-            SheetDB.write('https://sheetdb.io/api/v1/cssghqeah6wug', { sheet: 'Página1', data: {p1: permissions[0], p2: permissions[1], p3: permissions[2], p4: permissions[3], cpf: values.cpf, fonte: source, local: mode, ts: Date.now()} }).then(function(result){
+            SheetDB.write('https://sheetdb.io/api/v1/cssghqeah6wug', { sheet: 'Página1', data: {p1: permissions[0], p2: permissions[1], p3: permissions[2], p4: permissions[3], cpf: values.cpf, fonte: source, local: mode, ts:  moment().format('DD/MM/YYYY - HH:mm')} }).then(function(result){
               console.log(result);
               handler('forward');
               setSubmitting(false);
