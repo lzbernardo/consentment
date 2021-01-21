@@ -64,7 +64,7 @@ function Forms(props){
           console.log(values);
           setSubmitting(true);
           setTimeout(() => {
-            SheetDB.write('https://sheetdb.io/api/v1/cssghqeah6wug', { sheet: 'Página1', data: {p1: permissions[0], p2: permissions[1], p3: permissions[2], p4: permissions[3], cpf: values.cpf, fonte: source, local: mode } }).then(function(result){
+            SheetDB.write('https://sheetdb.io/api/v1/cssghqeah6wug', { sheet: 'Página1', data: {p1: permissions[0], p2: permissions[1], p3: permissions[2], p4: permissions[3], cpf: values.cpf, fonte: source, local: mode, ts: Date.now()} }).then(function(result){
               console.log(result);
               handler('forward');
               setSubmitting(false);
