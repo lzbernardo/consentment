@@ -1,6 +1,7 @@
 .box {
-  width: 50%;
-  min-width: 420px;
+  width: 420px;
+  min-width: 60%;
+  max-width: 90%;
   margin: auto;
   text-align: center;
   padding-top: 1rem;
