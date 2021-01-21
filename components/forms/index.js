@@ -6,7 +6,7 @@ import styles from './Forms.module.css';
 
 function Forms(props){
   const { handler, mode, source } = props;
-  const [permissions, setPermissions] = React.useState([0,0,0,0]);
+  const [permissions, setPermissions] = React.useState([0,0,0,'x']);
   const [feeling, setFeeling] = React.useState('😉')
   const [submitting, setSubmitting] = React.useState(false);
 
@@ -78,10 +78,30 @@ function Forms(props){
       >
         {(props) = (
           <Form>
-            <CustomSwitch id={0} permissions={permissions} handleToggle={handleToggle} />
-            <CustomSwitch id={1} permissions={permissions} handleToggle={handleToggle} />
-            <CustomSwitch id={2} permissions={permissions} handleToggle={handleToggle} />
-            <CustomSwitch id={3} permissions={permissions} handleToggle={handleToggle} />
+            <CustomSwitch
+                id={0}
+                permissions={permissions}
+                handleToggle={handleToggle}
+                text={mode=='atacadao'
+                      ?"Quero ter um cartão Atacadão e autorizo que o Banco CSF, parceiro da loja, analise meu score e minhas chances de obter crédito."
+                      :"Quero que o Banco Carrefour analise meu score para saber as minhas chances de obter um Cartão Carrefour."}
+            />
+            <CustomSwitch
+                id={1}
+                permissions={permissions}
+                handleToggle={handleToggle}
+                text={mode=='atacadao'
+                      ?"Quero utilizar meu CPF para ajudar o Atacadão a saber minhas preferências e eventualmente acessar vantagens Atacadão e de empresas parceiras."
+                      :"Quero utilizar meu CPF para ajudar o Carrefour a saber minhas preferências e eventualmente acessar vantagens das empresas do Grupo Carrefour."}
+            />
+            <CustomSwitch
+                id={2}
+                permissions={permissions}
+                handleToggle={handleToggle}
+                text={mode=='atacadao'
+                      ?"Tenho interesse em receber comunicados de ofertas e oportunidades exclusivas das empresas do mesmo grupo do Atacadão de acordo com o meu perfil de cliente."
+                      :"Tenho interesse em receber comunicados de ofertas e oportunidades exclusivas do Grupo Carrefour de acordo com o meu perfil de cliente."}
+            />
             <div className={styles.cpf}>
               <label>Insira seu <bold>CPF</bold>:</label>
               <Field className={styles.input} name="cpf" />
@@ -96,7 +116,7 @@ function Forms(props){
 }
 
 function CustomSwitch(props){
-  const {id, permissions, handleToggle} = props;
+  const {id, permissions, handleToggle, text} = props;
 
   return(
     <div className={styles.option} onClick={() => handleToggle(id)}>
