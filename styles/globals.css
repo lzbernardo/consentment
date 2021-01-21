@@ -2,8 +2,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  height: 100%;
 }
 
 a {
@@ -13,4 +14,24 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.default-carrefour {
+  color: #003376;
+  background-color: white;
+}
+
+.alternate-carrefour {
+  color: white;
+  background-color: #003376;
+}
+
+.default-atacadao {
+  color: #FD7923;
+  background-color: white;
+}
+
+.alternate-atacadao {
+  color: white;
+  background-color: #FD7923;
 }

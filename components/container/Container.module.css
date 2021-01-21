@@ -1,0 +1,5 @@
+.container {
+  width: 100%;
+  background-size: cover;
+  height: calc(100vh - 120px);
+}

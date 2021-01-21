@@ -1,0 +1,96 @@
+
+.box {
+  width: 60%;
+  min-width: 420px;
+  margin: auto;
+  padding-top: 1rem;
+}
+
+.formsHeader h2 {
+  font-size: 2em;
+  font-weight: 600;
+  color: white;
+  display: inline-block;
+}
+
+.formsHeader h2 span {
+  text-transform: uppercase;
+  font-size: .6em;
+  font-weight: 300;
+}
+
+.feeling{
+  float: right;
+  display: inline-block;
+  padding-top: 2.5rem;
+  font-size: 3em;
+}
+
+.option{
+  width: 100%;
+  background-color: white;
+  border-radius: 4px;
+  padding: 1rem;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.option .text {
+  width: calc(100% - 4rem);
+  display: inline-block;
+  padding-left: 1rem;
+}
+
+.option label {
+  display: inline-block;
+}
+
+.switch{
+  transform: scale(2)
+}
+
+.cpf label{
+  color: white;
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.2em;
+}
+
+.cpf label bold {
+  font-weight: 500;
+}
+
+.cpf input{
+  background-color: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius:4px;
+  color: #fff;
+  display: block;
+  width: 100%;
+  margin: 1rem auto 0;
+  padding: 1.4rem 2rem;
+  font-size: 1.2em;
+}
+
+.submit {
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 1.5rem;
+  border-radius: 7px;
+  border-style: none;
+  width: 100%;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: background 1s ease;
+}
+
+.submit:disabled{
+  background-color: rgb(140, 140, 140);
+}
+
+.svg {
+  width: 1em;
+  margin-right: 1em;
+}
