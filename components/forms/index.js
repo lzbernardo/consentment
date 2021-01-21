@@ -6,7 +6,7 @@ import styles from './Forms.module.css';
 
 function Forms(props){
   const { handler, mode, source } = props;
-  const [permissions, setPermissions] = React.useState([0,0,0,'x']);
+  const [permissions, setPermissions] = React.useState([0,0,0,0]);
   const [feeling, setFeeling] = React.useState('😉')
   const [submitting, setSubmitting] = React.useState(false);
 
@@ -121,7 +121,7 @@ function CustomSwitch(props){
   return(
     <div className={styles.option} onClick={() => handleToggle(id)}>
       <div className={styles.text}>
-        <p>{text}</p>
+        <p>{text  }</p>
       </div>
       <Switch
         className={styles.switch}
