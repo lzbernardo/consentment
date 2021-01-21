@@ -121,7 +121,7 @@ function CustomSwitch(props){
   return(
     <div className={styles.option} onClick={() => handleToggle(id)}>
       <div className={styles.text}>
-        <p>Textinho Explicativo</p>
+        <p>{text}</p>
       </div>
       <Switch
         className={styles.switch}

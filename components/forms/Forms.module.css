@@ -40,11 +40,15 @@
 .option .text {
   width: calc(100% - 4rem);
   display: inline-block;
+  vertical-align: middle;
   padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .option label {
   display: inline-block;
+  vertical-align: middle;
+  margin-left: .8rem;
 }
 
 .switch{
