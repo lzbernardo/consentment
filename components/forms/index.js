@@ -3,21 +3,13 @@ import Switch from 'react-input-switch';
 import { useFormikContext, Formik, Field, Form, ErrorMessage } from 'formik';
 import SheetDB from 'sheetdb-js'
 import styles from './Forms.module.css';
-import Moment from 'react-moment';
-import 'moment-timezone';
+import { format } from 'date-fns';
 
 function Forms(props){
   const { handler, mode, source } = props;
   const [permissions, setPermissions] = React.useState([0,0,0,0]);
   const [feeling, setFeeling] = React.useState('😉')
   const [submitting, setSubmitting] = React.useState(false);
-
-
-  const spreadsheetId = '1rVZ6TKE5TqBDAm0ttBIel6fH3OSxEsKzaQQyc2aazsg'
-  const baseUrl = "https://pushtogsheet.herokuapp.com";
-  const query = `valueInputOption=RAW&pizzly_pkey=pope8Qy8qfYyppnHRMgLMpQ8MuEUKDGeyhfGCj`;
-  const url = new URL(`/proxy/google-sheets/${spreadsheetId}/values/A1:append?${query}`, baseUrl);
-  const data = [["firstname", "lastname"], ["John", "Doe"]];
 
   function handleToggle(id){
     setPermissions(
@@ -66,7 +58,7 @@ function Forms(props){
           console.log(values);
           setSubmitting(true);
           setTimeout(() => {
-            SheetDB.write('https://sheetdb.io/api/v1/cssghqeah6wug', { sheet: 'Página1', data: {p1: permissions[0], p2: permissions[1], p3: permissions[2], p4: permissions[3], cpf: values.cpf, fonte: source, local: mode, ts:  moment().format('DD/MM/YYYY - HH:mm')} }).then(function(result){
+            SheetDB.write('https://sheetdb.io/api/v1/cssghqeah6wug', { sheet: 'Página1', data: {p1: permissions[0], p2: permissions[1], p3: permissions[2], p4: permissions[3], cpf: values.cpf, fonte: source, local: mode, ts: format(Date.now(), 'dd/MM/yyyy HH:mm:ss')} }).then(function(result){
               console.log(result);
               handler('forward');
               setSubmitting(false);
